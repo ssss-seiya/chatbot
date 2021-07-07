@@ -7,6 +7,3 @@ typings/
 
 # Node.js dependency directory
 node_modules/
-
-# .firebaseディレクトリ内は追跡しない
-.firebase/
