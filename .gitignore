@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# デプロイ時に作成されるキャッシュファイルを除外
+.firebase
