@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import defaultDataset from "./dataset";
 import './assets/styles/style.css';
 
@@ -16,9 +15,13 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div>
-
-      </div>
+      <section className='c-section'>
+        <div className='c-box'>
+          {/* <Chats />
+          <Answers /> */}
+          {this.state.currentId}
+        </div>
+      </section>
     );
   }
 }
