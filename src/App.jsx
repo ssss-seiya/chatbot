@@ -19,7 +19,6 @@ export default class App extends React.Component {
       <section className='c-section'>
         <div className='c-box'>
           <AnswersList />
-          {this.state.currentId}
         </div>
       </section>
     );
