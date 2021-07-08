@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import defaultDataset from "./dataset";
+import './assets/styles/style.css';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export default class App extends React.Component {
     return (
       <div>
 
-      </div>;
+      </div>
     );
   }
 }
