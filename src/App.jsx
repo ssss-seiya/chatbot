@@ -23,8 +23,24 @@ export default class App extends React.Component {
     })
   }
 
+  initChats = () => {
+    const initDataset = this.state.dataset[this.state.currentId];
+    const chat = {
+      text: initDataset.question,
+      type: 'question'
+    }
+
+    const chats = this.state.chats;
+    chats.push(chat)
+
+    this.setState({
+      chats: chats
+    })
+  }
+
   componentDidMount() {
     this.initAnswer()
+    this.initChats()
   }
 
   render() {
