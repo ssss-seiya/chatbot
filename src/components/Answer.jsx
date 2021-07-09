@@ -8,11 +8,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Answer = () => {
+const Answer = (props) => {
   // const classes = useStyles();
 
   return(
-    <Button variant="contained">Default</Button>
+    <Button variant="contained" color="primary">
+      {props.content}
+    </Button>
   )
 
 }
