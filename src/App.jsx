@@ -45,7 +45,7 @@ export default class App extends React.Component {
         this.setState({
           chats: chats
         })
-        this.displayNextQuestion(nextQuestionId)
+        setTimeout(() => this.displayNextQuestion(nextQuestionId), 1000);
         break;
     }
   }
