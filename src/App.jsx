@@ -35,6 +35,13 @@ export default class App extends React.Component {
       case (nextQuestionId === 'init'):
         this.displayNextQuestion(nextQuestionId)
         break;
+        // nextIdがurl形式の場合
+      case (/^https:*/.test(nextQuestionId)):
+        const a = document.createElement('a');
+        a.href = nextQuestionId;
+        a.target = '_blank'; // 別タグへ移動
+        a.click(); // 別タグへ開く
+        break;
       default:
         const chats = this.state.chats;
         chats.push({
@@ -45,7 +52,7 @@ export default class App extends React.Component {
         this.setState({
           chats: chats
         })
-        this.displayNextQuestion(nextQuestionId)
+        setTimeout(() => this.displayNextQuestion(nextQuestionId), 1000);
         break;
     }
   }
@@ -54,6 +61,14 @@ export default class App extends React.Component {
     const initAnswer = '';
     this.selectAnswer(initAnswer, this.state.currentId)
     }
+
+    // 最新のチャットが見えるように、スクロール位置の頂点をスクロール領域の最下部に設定する
+  componentDidUpdate() {
+    const scrollArea = document.getElementById('scroll-area')
+    if (scrollArea) {
+      scrollArea.scrollTop = scrollArea.scrollHeight
+    }
+  }
 
   render() {
     return (
