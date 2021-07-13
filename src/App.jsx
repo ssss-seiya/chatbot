@@ -35,6 +35,13 @@ export default class App extends React.Component {
       case (nextQuestionId === 'init'):
         this.displayNextQuestion(nextQuestionId)
         break;
+        // nextIdがurl形式の場合
+      case (/^https:*/.test(nextQuestionId)):
+        const a = document.createElement('a');
+        a.href = nextQuestionId;
+        a.target = '_blank'; // 別タグへ移動
+        a.click(); // 別タグへ開く
+        break;
       default:
         const chats = this.state.chats;
         chats.push({
